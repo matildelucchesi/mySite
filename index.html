@@ -11,30 +11,31 @@
 
 </head>
 <body>
-
     <header id="header" class="header">
         <div id="header_wrapper" class="header_wrapper">
             <div class="sub_header_wrapper">
                 <div class="menu-icon">
-                    <div class="dropdown" data-dropdown>
-                        <button class="menu" data-dropdown-button>
-                            <span class="line-text">
-                                <span>
+                    <div class="dropdown" data-dropdown >
+                        <button class="menu-button" data-dropdown-button>
+                            <span class="line-text" data-dropdown-button>
+                                <span data-dropdown-button>
                                     <span class="menu-line"></span>
                                     <span class="menu-line"></span>
                                     <span class="menu-line"></span>
                                 </span>
-                                <span class="menu-text">SECTIONS</span>
+                                <span class="menu-text" data-dropdown-button>SECTIONS</span>
                             </span>
                         </button>
-                        <nav>
-                            <div class="dropdown_menu">
-                                <a class="dropdown-links" href="#">ciao</a>
-                                <a class="dropdown-links" href="#">ciao</a>
-                                <a class="dropdown-links" href="#">ciao</a>
-                                <a class="dropdown-links" href="#">ciao</a>
-                            </div>
-                        </nav>
+                        <div class="dropdown_menu">
+                            <ul class="header-nav">
+                                <li><a class="dropdown-links" href="#">News</a></li>
+                                <li><a class="dropdown-links" href="#">Media</a></li>
+                                <li><a class="dropdown-links" href="#">Photos</a></li>
+                                <li><a class="dropdown-links" href="#">Opinion</a></li>
+                                <li><a class="dropdown-links" href="#">Sport</a></li>
+                                <li><a class="dropdown-links" href="#">Tech</a></li>
+                            </ul>
+                        </div>
                     </div>
                     <button class="search"></button>
                     <a></a>
@@ -56,5 +57,6 @@
         </div>
     </header>
 
+    <div class="overlay"></div>
 </body>
 </html>

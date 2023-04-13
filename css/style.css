@@ -9,6 +9,14 @@
     width: 100%;
 }
 
+.overlay{
+    display: none;
+    width: 100%;
+    height: 100vw;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
 @media (max-width: 772px){
     .header{
         height: 54px;
@@ -42,6 +50,9 @@
 }
 
 .dropdown_menu{
+    display: grid;
+    height: 30vw;
+    width: 20vw;
     position: absolute;
     left: 0;
     top: calc(100% + .25rem);
@@ -50,21 +61,22 @@
     border-radius: .25rem;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .1);
     opacity: 0;
-    transition: opacity 150ms ease-in-out;
-}
-
-.dropdown.active > .menu + .dropdown_menu{
-    opacity: 1;
+    transform: translateY(-10px);
+    transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+    z-index: 1;
 }
 
 .dropdown-links{
-    font-family: Bahnschrift Semi bold, serif;
+    font-family: "Arial", serif;
     text-decoration-line: none;
     color: black;
-    font-size: medium;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: -.03em;
+    line-height: 1.13;
 }
 
-.menu{
+.menu-button{
     display: block;
     align-items: center;
     background-color: transparent;
@@ -72,11 +84,19 @@
     border-radius: 2px;
     color: white;
     font-family: "Arial Black", serif;
+    transition: 0.5ms background-color ease-in-out;
+}
+
+.dropdown.active > .menu-button + .dropdown_menu{
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .line-text{
     display: flex;
     align-content: center;
+    background-color: transparent;
+    transition: 0.5ms background-color ease-in-out;
 }
 
 .menu-line {
@@ -85,7 +105,6 @@
     align-self: start;
     height: 3px;
     width: 10px;
-    transition: .2ms background-color ease-in-out;
     padding-right: 10px;
     margin-top:5px;
     margin-bottom: 5px;
@@ -100,11 +119,58 @@
     font-size: large;
     color: white;
     margin-left: 10px;
-    transition: .2ms background-color ease-in-out;
+    transition: 0.5ms color ease-in-out;
 }
 
-.menu:hover .menu-line, .menu:focus .menu-line, .menu[aria-expanded=true] .menu-line {
-    background: black;
+.dropdown.active > .menu-button .menu-text,
+.dropdown.active > .menu-button,
+.menu-button:hover, .menu-button:hover .menu-text {
+    background-color: white;
+    color: black;
+}
+
+.dropdown.active > .menu-button .menu-line,
+.menu-button:hover .menu-line{
+    background-color: black;
+}
+
+[data-dropdown] li {
+    display: none;
+}
+
+[data-dropdown].active li {
+    display: block;
+}
+
+.dropdown.active > .overlay{
+    display: block;
+}
+
+.header-nav{
+    display: grid;
+    background: white;
+    border-top-width: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+    color: black;
+    max-height: calc(100vh - 3.125rem - 0px);
+    overflow-y: auto;
+    padding-bottom: 1.25rem;
+    padding-left: 0;
+    padding-top: 0;
+}
+
+.header-nav li{
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    list-style: none;
+}
+
+.header-nav li:hover {
+    background-color: lightgray;
 }
 
 .logo{
@@ -172,4 +238,5 @@
         display: none;
     }
 }
+
 

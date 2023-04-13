@@ -13,17 +13,19 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 document.addEventListener('click', e=>{
-    const isDropdownButton = e.target.matches('[data-dropdown-button]')
-    if(!isDropdownButton && e.target.closest('[data-dropdown]') != null) return
+    const isDropdownButton = e.target.matches('[data-dropdown-button]');
+    if(!isDropdownButton && e.target.closest('[data-dropdown]') != null) return;
 
     let currentDropdown
     if(isDropdownButton){
-        currentDropdown = e.target.closest('[data-dropdown]')
-        currentDropdown.classList.toggle('active')
+        currentDropdown = e.target.closest('[data-dropdown]');
+        currentDropdown.classList.toggle('active');
+        console.log('Dropdown:', currentDropdown, 'active:', currentDropdown.classList.contains('active'));
     }
 
     document.querySelectorAll("[data-dropdown].active").forEach(dropdown => {
-        if (dropdown === currentDropdown) return
-        dropdown.classList.remove('active')
-    })
-})
+        if (dropdown === currentDropdown) return;
+        dropdown.classList.remove('active');
+        console.log('Dropdown:', dropdown, 'active:', dropdown.classList.contains('active'));
+    });
+});
