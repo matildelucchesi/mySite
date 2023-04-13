@@ -2,19 +2,22 @@
     margin: 0;
 }
 
-.header{
-    display: flex;
-    background-color: #c60800;
-    height: 7vw;
-    width: 100%;
-}
-
+/*overlay to obscure the content when opening the dropdown menu*/
 .overlay{
     display: none;
     width: 100%;
     height: 100vw;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 999;
+    transition: 0.5ms display ease-in-out;
+}
+
+/*header features*/
+.header{
+    display: flex;
+    background-color: #c60800;
+    height: 7vw;
+    width: 100%;
 }
 
 @media (max-width: 772px){
@@ -40,10 +43,12 @@
     width: 90%;
 }
 
+
 .menu-icon{
     display: flex;
 }
 
+/*dropdown menu*/
 .dropdown{
     display: flex;
     position: relative;
@@ -63,7 +68,7 @@
     opacity: 0;
     transform: translateY(-10px);
     transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
-    z-index: 1;
+    z-index: 5;
 }
 
 .dropdown-links{
@@ -87,11 +92,13 @@
     transition: 0.5ms background-color ease-in-out;
 }
 
+/*css for make visible the dropdown menu*/
 .dropdown.active > .menu-button + .dropdown_menu{
     opacity: 1;
     transform: translateY(0);
 }
 
+/*elements visible in the dropdown menu*/
 .line-text{
     display: flex;
     align-content: center;
@@ -122,6 +129,7 @@
     transition: 0.5ms color ease-in-out;
 }
 
+/*css that change colors of the button's elements when the class active is added at dropdown*/
 .dropdown.active > .menu-button .menu-text,
 .dropdown.active > .menu-button,
 .menu-button:hover, .menu-button:hover .menu-text {
@@ -134,6 +142,7 @@
     background-color: black;
 }
 
+/*css for seeing li elements of the dropdown menu only when it is active*/
 [data-dropdown] li {
     display: none;
 }
@@ -142,10 +151,7 @@
     display: block;
 }
 
-.dropdown.active > .overlay{
-    display: block;
-}
-
+/*list in the dropdown menu*/
 .header-nav{
     display: grid;
     background: white;
@@ -173,6 +179,47 @@
     background-color: lightgray;
 }
 
+/*css for the search button*/
+.search{
+    display: flex;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.search-icon{
+    width: 40px;
+    height: 40px;
+}
+
+.dropdown-search{
+    display: flex;
+    position: relative;
+}
+
+.dropdown-search-menu{
+    display: grid;
+    bottom: 0;
+    height: 5vw;
+    width: 100vw;
+    position: absolute;
+    left: -300px;
+    top: 6.4vw;
+    background-color: white;
+    padding: .75rem;
+    border-radius: .25rem;
+    box-shadow: 0 2px 5px 0 gray;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+    z-index: 1;
+}
+
+.dropdown-search.active > .search + .dropdown-search-menu{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/*logo css*/
 .logo{
     display: flex;
     align-self: center;
@@ -189,6 +236,7 @@
     align-self: center;
 }
 
+/*right element css*/
 .rectangle{
     display: flex;
     align-items: center;
@@ -208,6 +256,7 @@
     font-size: 1em;
 }
 
+/*css for the mini-header in the bottom of the main header*/
 .bottom_header{
     display: flex;
     align-self: flex-end;
@@ -238,5 +287,6 @@
         display: none;
     }
 }
+
 
 
