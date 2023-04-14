@@ -15,6 +15,7 @@
 /*header features*/
 .header{
     display: flex;
+    position: absolute;
     background-color: #c60800;
     height: 7vw;
     width: 100%;
@@ -197,26 +198,88 @@
 }
 
 .dropdown-search-menu{
-    display: grid;
-    bottom: 0;
-    height: 5vw;
-    width: 100vw;
+    display: flex;
+    opacity: 0;
+    transform: translateY(-1px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    height: 7vw;
+    width: 100%;
     position: absolute;
-    left: -300px;
-    top: 6.4vw;
+    left: 0;
+    top: 100%;
     background-color: white;
-    padding: .75rem;
     border-radius: .25rem;
     box-shadow: 0 2px 5px 0 gray;
-    opacity: 0;
-    transform: translateY(-10px);
-    transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
-    z-index: 1;
+    z-index: 2;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
 }
 
-.dropdown-search.active > .search + .dropdown-search-menu{
-    opacity: 1;
-    transform: translateY(0);
+/*css for the search bar into the search dropdown menu*/
+.search-bar{
+    display: flex;
+    width: 80%;
+    height: 70%;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-bar-form{
+    display: flex;
+    width: 80%;
+    height: 100%;
+    align-self: center;
+    justify-content: center;
+}
+
+.input-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0.8;
+    margin-right: 20px;
+    border: solid black;
+    border-radius: 30px 30px 30px 30px;
+}
+
+.search-input-icon{
+    display: flex;
+    height: 30px;
+}
+
+.input-text {
+    flex: 0.9;
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    border-radius: 5px 0 0 5px;
+    border: none;
+}
+
+.input{
+    width: 100%;
+    font-size: medium;
+    font-family: Bahnschrift, serif;
+    font-weight: bold;
+    border: none;
+}
+
+.submit {
+    font-family: Bahnschrift, serif;
+    font-weight: bold;
+    font-size: large;
+    background-color: #c60800;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: .2s opacity ease-in-out;
+    border-radius: 30px 30px 30px 30px;
+    position: relative;
+}
+
+.submit:hover {
+    opacity: 0.8;
 }
 
 /*logo css*/
@@ -259,6 +322,8 @@
 /*css for the mini-header in the bottom of the main header*/
 .bottom_header{
     display: flex;
+    position: absolute;
+    top: 75%;
     align-self: flex-end;
     align-content: center;
     justify-content: center;
