@@ -44,6 +44,7 @@ let currentDropdown;
 document.addEventListener('click', e=>{
     const isDropdownSearch = e.target.matches('[search-dropdown-button]');
     const menu = document.querySelector('.dropdown-search-menu');
+    const elements = document.querySelectorAll('[search-menu]');
     if(!isDropdownSearch && e.target.closest('[search-dropdown]') != null) return;
 
     if(isDropdownSearch){
@@ -55,9 +56,15 @@ document.addEventListener('click', e=>{
             if (menu && currentDropdown.classList.contains('active')) {
                 menu.style.opacity = '1';
                 menu.style.transform = 'translateY(1px)';
+                elements.forEach(element => {
+                    element.style.visibility = 'visible';
+                });
             } else if (menu) {
                 menu.style.opacity = '0';
                 menu.style.transform = 'translateY(-1px)';
+                elements.forEach(element => {
+                    element.style.visibility = 'hidden';
+                });
             }
         }
     }
@@ -67,5 +74,8 @@ document.addEventListener('click', e=>{
         console.log('Dropdown:', currentDropdown, 'active:', currentDropdown.classList.contains('active'));
         menu.style.opacity = '0';
         menu.style.transform = 'translateY(-1px)';
+        elements.forEach(element => {
+            element.style.visibility = 'hidden';
+        });
     }
 });
