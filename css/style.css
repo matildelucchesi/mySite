@@ -64,12 +64,12 @@
 }
 
 .dropdown-menu{
-    display: grid;
+    overflow-y: auto;
     height: 30vw;
     width: 20vw;
     position: absolute;
     left: 0;
-    top: calc(100% + .25rem);
+    top: calc(100% + .60rem);
     background-color: white;
     padding: .75rem;
     border-radius: .25rem;
@@ -88,6 +88,12 @@
     font-size: 1rem;
     letter-spacing: -.03em;
     line-height: 1.13;
+}
+
+.new::before{
+    content: "NEW!!";
+    color: #c60800;
+    display: flex;
 }
 
 .menu-button{
@@ -161,24 +167,42 @@
 }
 
 /*list in the dropdown menu*/
+.hn{
+    display: flex;
+    height: 100%;
+}
+
 .header-nav{
     display: grid;
+    border-bottom: 1px solid gray;
     background: white;
-    border-top-width: 0;
-    border-left-width: 0;
-    border-right-width: 0;
     color: black;
     max-height: calc(100vh - 3.125rem - 0px);
-    overflow-y: auto;
     padding-bottom: 1.25rem;
     padding-left: 0;
     padding-top: 0;
+    grid-auto-rows: 50px;
+    text-align: left;
+    align-items: center;
+    flex: 1;
+}
+
+.header-nav::before{
+    content: "";
+    position: absolute;
+    top: -10px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid white;
+
 }
 
 .header-nav li{
     background-color: transparent;
     margin: 0;
-    padding: 0;
+    padding: 15px;
     border: 0;
     vertical-align: baseline;
     list-style: none;
@@ -312,7 +336,7 @@
 /*logo css*/
 .logo{
     display: flex;
-    position: fixed;
+    position: absolute;
     left: 50%;
     transform: translate(-50%, 0);
     flex: 1;
@@ -415,7 +439,7 @@
 /*right button css*/
 .link-button{
     display: flex;
-    position: fixed;
+    position: absolute;
     right: 20px;
     flex: 1;
     align-items: center;
@@ -495,4 +519,54 @@
     .email{
         visibility: hidden;
     }
+}
+
+/*css for the submenu in the dropdown-menu*/
+.dropdown-li{
+    display: flex;
+    justify-content: space-between;
+}
+
+.sub-menu{
+    position: relative;
+    border: none;
+    background-color: transparent;
+}
+
+.arrow {
+    display: flex;
+    content: "";
+    flex:1;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid black;
+}
+
+.sub-menu-dropdown{
+    display: none;
+    background-color: white;
+    transform: translateY(-1px);
+    transition: display 0.3s ease, transform 0.3s ease;
+}
+
+.sub-menu-ul{
+    display: grid;
+    background: white;
+    border-top-width: 0;
+    border-left-width: 0;
+    border-right-width: 0;
+    color: black;
+    max-height: calc(100vh - 3.125rem - 0px);
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-top: 0;
+    grid-auto-rows: 40px;
+    text-align: left;
+    align-items: center;
+    flex: 1;
+}
+
+.dli{
+    position: fixed;
+    visibility: hidden;
 }

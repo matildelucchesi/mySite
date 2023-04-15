@@ -27,14 +27,30 @@
                             </span>
                         </button>
                         <div class="dropdown-menu">
-                            <ul class="header-nav">
-                                <li><a class="dropdown-links" href="#">News</a></li>
-                                <li><a class="dropdown-links" href="#">Media</a></li>
-                                <li><a class="dropdown-links" href="#">Photos</a></li>
-                                <li><a class="dropdown-links" href="#">Opinion</a></li>
-                                <li><a class="dropdown-links" href="#">Sport</a></li>
-                                <li><a class="dropdown-links" href="#">Tech</a></li>
-                            </ul>
+                            <nav class="hn">
+                                <ul class="header-nav">
+                                    <li><a class="dropdown-links" href="#">News</a></li>
+                                    <li><a class="dropdown-links" href="#">Media</a></li>
+                                    <li>
+                                        <div class="dropdown-li" sub-menu-dropdown>
+                                            <a class="dropdown-links" href="#">Photos</a>
+                                            <button class="sub-menu" sub-menu-dropdown-button>
+                                                <span class="arrow" sub-menu-dropdown-button></span>
+                                            </button>
+                                        </div>
+                                        <div class="sub-menu-dropdown">
+                                            <ul class="sub-menu-ul">
+                                                <li><a class="dropdown-links" href="#">Link 1</a></li>
+                                                <li><a class="dropdown-links" href="#">Link 2</a></li>
+                                                <li><a class="dropdown-links" href="#">Link 3</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li><a class="dropdown-links" href="#">Opinion</a></li>
+                                    <li><a class="dropdown-links" href="#">Sport</a></li>
+                                    <li><a class="dropdown-links new" href="#">Tech</a></li>
+                                </ul>
+                            </nav>
                         </div>
                     </div>
                     <div class="dropdown-search" search-dropdown>
