@@ -1,7 +1,7 @@
 function displayDate() {
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
     const date = new Date().toLocaleDateString('en-US', options);
-    const container = document.getElementById('bottom_header');
+    const container = document.getElementById('bottom-header');
     const paragraph = document.createElement('p');
     paragraph.textContent = date;
     paragraph.classList.add('date');
