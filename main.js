@@ -10,23 +10,27 @@ function displayDate() {
 
 document.addEventListener('DOMContentLoaded', function() {
     displayDate();
+    displayInnerSearch();
+    adjournSiteContent()
 });
 
-document.addEventListener('click', e=>{
+document.addEventListener('click', e => {
     const isDropdownButton = e.target.matches('[data-dropdown-button]');
     const overlay = document.querySelector('.overlay');
-    if(!isDropdownButton && e.target.closest('[data-dropdown]') != null) return;
+    if (!isDropdownButton && e.target.closest('[data-dropdown]') != null) return;
 
-    let currentDropdown
-    if(isDropdownButton){
+    let currentDropdown;
+    if (isDropdownButton) {
         currentDropdown = e.target.closest('[data-dropdown]');
         currentDropdown.classList.toggle('active');
         console.log('Dropdown:', currentDropdown, 'active:', currentDropdown.classList.contains('active'));
 
-        if (overlay.style.display === 'block') {
-            overlay.style.display = 'none';
-        } else {
+        if (currentDropdown.classList.contains('active')) {
+
             overlay.style.display = 'block';
+
+        } else {
+            overlay.style.display = 'none';
         }
     }
 
@@ -36,15 +40,18 @@ document.addEventListener('click', e=>{
         console.log('Dropdown:', dropdown, 'active:', dropdown.classList.contains('active'));
         overlay.style.display = 'none';
     });
-
 });
 
-let currentDropdown;
+window.addEventListener('resize', () => {
+    displayInnerSearch();
+});
+
 
 document.addEventListener('click', e=>{
     const isDropdownSearch = e.target.matches('[search-dropdown-button]');
     const menu = document.querySelector('.dropdown-search-menu');
     const elements = document.querySelectorAll('[search-menu]');
+    let currentDropdown;
     if(!isDropdownSearch && e.target.closest('[search-dropdown]') != null) return;
 
     if(isDropdownSearch){
@@ -83,12 +90,14 @@ document.addEventListener('click', e=>{
 });
 
 
+
 document.addEventListener('click', e=>{
     const isDropdownButton = e.target.matches('[sub-menu-dropdown-button]');
     const arrow = document.querySelector('.arrow');
     const menu = document.querySelector('.sub-menu-dropdown');
-    const elements = document.querySelectorAll('[second-style]');
     const hn = document.querySelector('.hn');
+    const second = document.querySelector('#menu-second-nav');
+    const third = document.querySelector('#menu-third-nav');
     const log = document.querySelector('.login-container');
     if(!isDropdownButton && e.target.closest('[sub-menu-dropdown]') != null) return;
 
@@ -102,20 +111,33 @@ document.addEventListener('click', e=>{
             arrow.style.transform = 'rotate(180deg)';
             menu.style.display = 'block';
             menu.style.transform = 'translateY(1px)';
-            elements.forEach(element => {
-                element.style.transform = 'translateY(190px)';
-            });
-            log.style.transform = 'translateY(150px)'
             hn.style.height = '55em';
+
+            if(window.innerWidth < 1080){
+                second.style.transform = 'translateY(198px)';
+                third.style.transform = 'translateY(195px)';
+                log.style.transform = 'translateY(144px)';
+            }else{
+                second.style.transform = 'translateY(120px)';
+                third.style.transform = 'translateY(120px)';
+                log.style.transform = 'translateY(120px)';
+            }
+
         } else {
             arrow.style.transform = 'rotate(0deg)';
             menu.style.display = 'none';
             menu.style.transform = 'translateY(-1px)';
-            elements.forEach(element => {
-                element.style.transform = 'translateY(80px)';
-            });
-            log.style.transform = 'translateY(40px)';
             hn.style.height = '54em';
+
+            if(window.innerWidth < 1080){
+                second.style.transform = 'translateY(75px)';
+                third.style.transform = 'translateY(75px)';
+                log.style.transform = 'translateY(30px)';
+            }else{
+                second.style.transform = 'translateY(0px)';
+                third.style.transform = 'translateY(0px)';
+                log.style.transform = 'translateY(0px)';
+            }
         }
     }
 
@@ -126,36 +148,26 @@ document.addEventListener('click', e=>{
         arrow.style.transform = 'rotate(0deg)';
         menu.style.display = 'none';
         menu.style.transform = 'translateY(-1px)';
-        elements.forEach(element => {
-            element.style.transform = 'translateY(80px)';
-        });
-        log.style.transform = 'translateY(40px)';
+        second.style.transform = 'translateY(0px)';
+        third.style.transform = 'translateY(0px)';
+        log.style.transform = 'translateY(0px)';
     });
 
 });
 
-
-function resizeDropdownMenu(){
+function displayInnerSearch(){
     const search = document.querySelector('.search-inner');
-    const header = document.querySelector('.header-nav');
-    const second = document.querySelector('#menu-second-nav');
-    const third = document.querySelector('#menu-third-nav');
-    const log = document.querySelector('.login-container');
-
-    if (window.innerWidth < 1080){
+    if (window.innerWidth < 1080) {
         search.style.display = 'flex';
-        header.style.transform = 'translateY(15px)';
-        second.style.transform = 'translateY(80px)';
-        third.style.transform = 'translateY(70px)';
-        log.style.transform = 'translateY(14px)';
     }else{
         search.style.display = 'none';
-        header.style.transform = 'translateY(-70px)';
-        second.style.transform = 'translateY(-10px)';
-        third.style.transform = 'translateY(-10px)';
-        log.style.transform = 'translateY(-10px)';
     }
 }
 
-window.onload = resizeDropdownMenu;
-window.onresize = resizeDropdownMenu;
+function adjournSiteContent(){
+    const header = document.querySelector('header');
+    const siteContent = document.querySelector('.site-content');
+    const headerHeight = header.offsetHeight;
+
+    siteContent.style.marginTop = `${headerHeight}px`;
+}
