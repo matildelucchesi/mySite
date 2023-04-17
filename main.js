@@ -70,8 +70,10 @@ document.addEventListener('click', e=>{
     }
 
     if(!e.target.matches('[search-dropdown-button]') && !e.target.matches('[search-menu]')){
-        currentDropdown.classList.remove('active');
-        console.log('Dropdown:', currentDropdown, 'active:', currentDropdown.classList.contains('active'));
+        if(currentDropdown) {
+            currentDropdown.classList.remove('active');
+            console.log('Dropdown:', currentDropdown, 'active:', currentDropdown.classList.contains('active'));
+        }
         menu.style.opacity = '0';
         menu.style.transform = 'translateY(-1px)';
         elements.forEach(element => {
@@ -85,7 +87,9 @@ document.addEventListener('click', e=>{
     const isDropdownButton = e.target.matches('[sub-menu-dropdown-button]');
     const arrow = document.querySelector('.arrow');
     const menu = document.querySelector('.sub-menu-dropdown');
-    const li = document.querySelector('.dli');
+    const elements = document.querySelectorAll('[second-style]');
+    const hn = document.querySelector('.hn');
+    const log = document.querySelector('.login-container');
     if(!isDropdownButton && e.target.closest('[sub-menu-dropdown]') != null) return;
 
     let currentDropdown
@@ -98,12 +102,20 @@ document.addEventListener('click', e=>{
             arrow.style.transform = 'rotate(180deg)';
             menu.style.display = 'block';
             menu.style.transform = 'translateY(1px)';
-            li.style.visibility = 'visible';
+            elements.forEach(element => {
+                element.style.transform = 'translateY(190px)';
+            });
+            log.style.transform = 'translateY(150px)'
+            hn.style.height = '55em';
         } else {
             arrow.style.transform = 'rotate(0deg)';
             menu.style.display = 'none';
             menu.style.transform = 'translateY(-1px)';
-            li.style.visibility = 'hidden';
+            elements.forEach(element => {
+                element.style.transform = 'translateY(80px)';
+            });
+            log.style.transform = 'translateY(40px)';
+            hn.style.height = '54em';
         }
     }
 
@@ -114,7 +126,36 @@ document.addEventListener('click', e=>{
         arrow.style.transform = 'rotate(0deg)';
         menu.style.display = 'none';
         menu.style.transform = 'translateY(-1px)';
-        li.style.visibility = 'hidden';
+        elements.forEach(element => {
+            element.style.transform = 'translateY(80px)';
+        });
+        log.style.transform = 'translateY(40px)';
     });
 
 });
+
+
+function resizeDropdownMenu(){
+    const search = document.querySelector('.search-inner');
+    const header = document.querySelector('.header-nav');
+    const second = document.querySelector('#menu-second-nav');
+    const third = document.querySelector('#menu-third-nav');
+    const log = document.querySelector('.login-container');
+
+    if (window.innerWidth < 1080){
+        search.style.display = 'flex';
+        header.style.transform = 'translateY(15px)';
+        second.style.transform = 'translateY(80px)';
+        third.style.transform = 'translateY(70px)';
+        log.style.transform = 'translateY(14px)';
+    }else{
+        search.style.display = 'none';
+        header.style.transform = 'translateY(-70px)';
+        second.style.transform = 'translateY(-10px)';
+        third.style.transform = 'translateY(-10px)';
+        log.style.transform = 'translateY(-10px)';
+    }
+}
+
+window.onload = resizeDropdownMenu;
+window.onresize = resizeDropdownMenu;

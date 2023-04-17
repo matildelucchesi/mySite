@@ -65,8 +65,8 @@
 
 .dropdown-menu{
     overflow-y: auto;
-    height: 30vw;
-    width: 20vw;
+    height: 50vw;
+    width: 30vw;
     position: absolute;
     left: 0;
     top: calc(100% + .60rem);
@@ -168,23 +168,25 @@
 
 /*list in the dropdown menu*/
 .hn{
-    display: flex;
-    height: 100%;
+    display: grid;
+    height: 54em;
 }
 
-.header-nav{
-    display: grid;
+.header-nav {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
     border-bottom: 1px solid gray;
     background: white;
     color: black;
-    max-height: calc(100vh - 3.125rem - 0px);
     padding-bottom: 1.25rem;
     padding-left: 0;
     padding-top: 0;
     grid-auto-rows: 50px;
     text-align: left;
-    align-items: center;
     flex: 1;
+    width: 90%;
+    margin-top: 70px;
 }
 
 .header-nav::before{
@@ -199,7 +201,7 @@
 
 }
 
-.header-nav li{
+ul.header-nav li, ul.menu-second-style li{
     background-color: transparent;
     margin: 0;
     padding: 15px;
@@ -208,7 +210,7 @@
     list-style: none;
 }
 
-.header-nav li:hover {
+ul.header-nav li:hover, ul.menu-second-style li:hover {
     background-color: lightgray;
 }
 
@@ -282,6 +284,7 @@
 }
 
 .input-text {
+    display: flex;
     flex: 0.9;
     width: 100%;
     max-width: 400px;
@@ -519,11 +522,13 @@
     .email{
         visibility: hidden;
     }
+
 }
 
 /*css for the submenu in the dropdown-menu*/
 .dropdown-li{
     display: flex;
+    position: relative;
     justify-content: space-between;
 }
 
@@ -547,6 +552,7 @@
     background-color: white;
     transform: translateY(-1px);
     transition: display 0.3s ease, transform 0.3s ease;
+    position: relative;
 }
 
 .sub-menu-ul{
@@ -566,7 +572,81 @@
     flex: 1;
 }
 
-.dli{
-    position: fixed;
-    visibility: hidden;
+
+/*css for the second part of the header*/
+.menu-second-style{
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    border-bottom: 1px solid gray;
+    background: white;
+    padding-bottom: 1.25rem;
+    padding-left: 0;
+    padding-top: 0;
+    grid-auto-rows: 50px;
+    text-align: left;
+    flex: 1;
+    width: 90%;
+    transition: all 0.3s ease;
+}
+
+#menu-second-nav{
+    margin-top: 365px;
+}
+
+#menu-third-nav{
+    margin-top: 615px;
+}
+
+.second-link{
+    font-family: "Arial", serif;
+    text-decoration-line: none;
+    color: gray;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: -.03em;
+    line-height: 1.13;
+}
+
+/*css login button in dropdown menu*/
+.login-container{
+    display: flex;
+    flex: 1;
+    margin-top: 879px;
+    padding-bottom: 1.25rem;
+    align-items: center;
+}
+
+.login-button{
+    background-color: transparent;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: "Arial Black",sans-serif;
+    font-weight: 700;
+    display: flex;
+    text-transform: uppercase;
+    color: black;
+    font-size: 1rem;
+    line-height: 1;
+    border-color: black;
+    margin: 0 auto;
+    width: calc(100% - 40px);
+    border-radius: 10px 10px 10px 10px;
+    height: 55px;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 26px;
+}
+
+.search-inner{
+    display: none;
+    width: 100%;
+    align-items: center;
+}
+
+.search-inner-form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
