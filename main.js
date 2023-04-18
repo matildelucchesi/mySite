@@ -11,12 +11,13 @@ function displayDate() {
 document.addEventListener('DOMContentLoaded', function() {
     displayDate();
     displayInnerSearch();
-    adjournSiteContent()
+    adjournSiteContent();
 });
 
 document.addEventListener('click', e => {
     const isDropdownButton = e.target.matches('[data-dropdown-button]');
     const overlay = document.querySelector('.overlay');
+    const d = document.querySelector('.dropdown-menu');
     if (!isDropdownButton && e.target.closest('[data-dropdown]') != null) return;
 
     let currentDropdown;
@@ -26,11 +27,12 @@ document.addEventListener('click', e => {
         console.log('Dropdown:', currentDropdown, 'active:', currentDropdown.classList.contains('active'));
 
         if (currentDropdown.classList.contains('active')) {
-
+            d.style.overflowY = 'auto';
             overlay.style.display = 'block';
 
         } else {
             overlay.style.display = 'none';
+            d.style.overflowY = 'hidden';
         }
     }
 
@@ -39,6 +41,7 @@ document.addEventListener('click', e => {
         dropdown.classList.remove('active');
         console.log('Dropdown:', dropdown, 'active:', dropdown.classList.contains('active'));
         overlay.style.display = 'none';
+        d.style.overflowY = 'hidden';
     });
 });
 
@@ -167,7 +170,10 @@ function displayInnerSearch(){
 function adjournSiteContent(){
     const header = document.querySelector('header');
     const siteContent = document.querySelector('.site-content');
+    const footer = document.querySelector('.site-footer');
     const headerHeight = header.offsetHeight;
+    const contentHeight = siteContent.offsetHeight;
 
     siteContent.style.marginTop = `${headerHeight}px`;
+    footer.style.marginTop = `${contentHeight}px`
 }
