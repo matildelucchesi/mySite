@@ -11,7 +11,6 @@ function displayDate() {
 document.addEventListener('DOMContentLoaded', function() {
     displayDate();
     displayInnerSearch();
-    adjournSiteContent();
 });
 
 document.addEventListener('click', e => {
@@ -167,13 +166,3 @@ function displayInnerSearch(){
     }
 }
 
-function adjournSiteContent(){
-    const header = document.querySelector('header');
-    const siteContent = document.querySelector('.site-content');
-    const footer = document.querySelector('.site-footer');
-    const headerHeight = header.offsetHeight;
-    const contentHeight = siteContent.offsetHeight;
-
-    siteContent.style.marginTop = `${headerHeight}px`;
-    footer.style.marginTop = `${contentHeight}px`
-}
