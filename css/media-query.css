@@ -1,5 +1,4 @@
 /*media query for the header*/
-
 @media (max-width: 772px){
     .header{
         height: 54px;
@@ -93,7 +92,6 @@
 }
 
 /*media query for the sub-header*/
-
 @media (max-width: 825px){
     .sub-header-wrapper{
         height: 100%;
@@ -112,7 +110,6 @@
 }
 
 /*media query for the dropdown menu*/
-
 @media (max-width: 1080px){
     .link-button{
         visibility: hidden;
