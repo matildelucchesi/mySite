@@ -1011,6 +1011,10 @@ ul.header-nav li:hover, ul.menu-second-style li:hover {
     .site-footer-top{
         display:flex;
     }
+
+    #footer-logo{
+        left:-200px;
+    }
 }
 
 
@@ -1071,6 +1075,7 @@ ul.header-nav li:hover, ul.menu-second-style li:hover {
         width: 4vw;
         font-size: 40px;
         margin-left: 0;
+        left: 96px;
     }
 
     .social-icon{
@@ -1132,6 +1137,10 @@ ul.header-nav li:hover, ul.menu-second-style li:hover {
         transform: translate(-60%);
     }
 
+    #footer-social{
+        left: 62px;
+    }
+
 }
 
 @media screen and (max-width: 570px){
@@ -1168,6 +1177,10 @@ ul.header-nav li:hover, ul.menu-second-style li:hover {
 
     .site-footer-top{
         width: 44vw;
+    }
+
+    #footer-social{
+        left: 34px;
     }
 }
 
@@ -1246,6 +1259,7 @@ ul.header-nav li:hover, ul.menu-second-style li:hover {
     position: relative;
     list-style: none;
     padding-left: 0;
+    left: 400px;
 }
 
 .social-icon{
