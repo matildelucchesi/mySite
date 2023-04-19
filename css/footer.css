@@ -1,0 +1,95 @@
+.site-footer{
+    display: grid;
+    border-top: 2px solid #c60800;
+    top: 89px;
+    position: relative;
+    max-width: 100vw;
+}
+
+.site-footer-wrapper{
+    width: 100%;
+    display: grid;
+    justify-items: inherit;
+    position: relative;
+}
+
+.site-footer-top{
+    max-width: 80%;
+    position: relative;
+    justify-content: center;
+    justify-self: center;
+}
+
+.social{
+    display: flex;
+    position: relative;
+    list-style: none;
+    padding-left: 0;
+}
+
+.social-icon{
+    width: 4vw;
+    height: 4vw;
+    min-width: 30px;
+    min-height: 30px;
+}
+
+#footer-logo{
+    width: fit-content;
+    margin-left: 0;
+    max-width: 160px;
+}
+
+.footer-nav{
+    display: flex;
+}
+
+.footer-menu{
+    display: flex;
+    list-style: none;
+    position: relative;
+    padding: 1em;
+    text-align: right;
+}
+
+.footer-menu li{
+    display: grid;
+    align-items: center;
+    align-content: center;
+    margin-left: 40px;
+    position: relative;
+}
+
+.footer-link{
+    font-family: Bahnschrift, serif;
+    color: gray;
+    text-decoration: none;
+    font-size: 2vw;
+}
+
+.site-footer-main{
+    width: fit-content;
+    height: fit-content;
+}
+
+.list{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#list-1{
+    column-count: 2;
+}
+
+#list-1-title{
+    text-align: center;
+}
+
+.footer-list-title{
+    text-decoration: none;
+    color: black;
+    font-family: Bahnschrift, serif;
+    font-size: 2.4vw;
+    position: relative;
+}
