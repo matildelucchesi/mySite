@@ -11,6 +11,7 @@ function displayDate() {
 document.addEventListener('DOMContentLoaded', function() {
     displayDate();
     displayInnerSearch();
+    overlayDimension();
 });
 
 document.addEventListener('click', e => {
@@ -167,3 +168,7 @@ function displayInnerSearch(){
 }
 
 
+function overlayDimension(){
+    const overlay = document.querySelector(".overlay");
+    overlay.style.height = document.body.scrollHeight + 100 + "px";
+}

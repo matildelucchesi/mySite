@@ -574,6 +574,10 @@ ul.header-nav li:hover, ul.menu-second-style li:hover {
     .login-container{
         transform: translateY(-10px);
     }
+
+    #footer-social{
+        left: 330px;
+    }
 }
 
 @media (max-width: 850px){
@@ -909,6 +913,7 @@ ul.header-nav li:hover, ul.menu-second-style li:hover {
     justify-content: center;
     align-items: center;
     width: 15em;
+    position: relative;
 }
 
 .site-widget-wrapper{
@@ -922,11 +927,6 @@ ul.header-nav li:hover, ul.menu-second-style li:hover {
     text-align: center;
 }
 
-.social{
-    display: flex;
-    position: relative;
-    list-style: none;
-}
 
 .social-icon{
     width: 35px;
@@ -1015,6 +1015,10 @@ ul.header-nav li:hover, ul.menu-second-style li:hover {
     #footer-logo{
         left:-200px;
     }
+
+    .site-widget{
+        left:20px;
+    }
 }
 
 
@@ -1082,6 +1086,8 @@ ul.header-nav li:hover, ul.menu-second-style li:hover {
         width: 12vw;
         height: 12vw;
     }
+
+
 
 }
 
@@ -1259,7 +1265,6 @@ ul.header-nav li:hover, ul.menu-second-style li:hover {
     position: relative;
     list-style: none;
     padding-left: 0;
-    left: 400px;
 }
 
 .social-icon{
