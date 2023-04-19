@@ -1,5 +1,5 @@
 /*import media-query*/
-@import url("media-query.css");
+@import "media-query.css";
 
 * {
     margin: 0;
