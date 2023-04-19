@@ -3,7 +3,6 @@
 .container {
     display: grid;
     width: 90vw;
-    max-width: 1200px;
     min-width: 200px;
     margin: 0 auto;
     left: -20px;
