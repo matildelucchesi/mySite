@@ -17,7 +17,7 @@
     float: left;
     padding-left: 25px;
     padding-top: 2em;
-    transform: translateY(60px);
+    transform: translateY(90px);
     width: 60%;
 }
 
@@ -140,7 +140,7 @@
     display: flex;
     height: 600px;
     margin-bottom: 10px;
-    margin-top: 10px;
+    margin-top: 65px;
     background-color: #9e9d9d;
 }
 
