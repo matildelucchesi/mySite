@@ -84,8 +84,8 @@
     color: white;
     font-family: "Arial Black", serif;
     transition: 0.5ms background-color ease-in-out;
-    z-index: 1;
     position: relative;
+    z-index: 1;
 }
 
 /*make visible the dropdown menu*/
