@@ -1,4 +1,4 @@
-#PPM front-end lab
+# PPM front-end lab
 
 I used both Flexbox and Grid to create a responsive layout.
 
