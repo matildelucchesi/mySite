@@ -1007,6 +1007,12 @@ ul.header-nav li:hover, ul.menu-second-style li:hover {
     max-width: 100%;
 }
 
+@media screen and (min-width: 1080px){
+    .site-footer-top{
+        display:flex;
+    }
+}
+
 
 
 @media screen and (max-width: 1080px){
@@ -1045,13 +1051,26 @@ ul.header-nav li:hover, ul.menu-second-style li:hover {
         display: none;
     }
 
+    .site-footer-top{
+        display: grid;
+    }
+
+    .site-footer-wrapper{
+        justify-content: center;
+    }
+
     #footer-social{
+        left: 0;
+    }
+
+    .social{
         left: 0;
     }
 
     #footer-logo{
         width: 4vw;
-        font-size: 3vw;
+        font-size: 40px;
+        margin-left: 0;
     }
 
     .social-icon{
@@ -1097,18 +1116,22 @@ ul.header-nav li:hover, ul.menu-second-style li:hover {
 
 }
 
+@media screen and (min-width: 629px){
+    #footer-logo{
+        transform: translate(-100%);
+    }
+}
+
 @media screen and (max-width: 630px){
 
     .site-footer{
         width: 88vw;
     }
 
-}
-
-@media screen and (max-width: 600px){
-    .site-footer-top{
-        left: 22px;
+    #footer-logo{
+        transform: translate(-60%);
     }
+
 }
 
 @media screen and (max-width: 570px){
@@ -1155,6 +1178,12 @@ ul.header-nav li:hover, ul.menu-second-style li:hover {
     }
 }
 
+@media screen and (max-width: 370px){
+    .layout-img{
+        width: 80vw;
+    }
+}
+
 
 @media screen and (max-width: 300px){
     .img-item{
@@ -1183,6 +1212,12 @@ ul.header-nav li:hover, ul.menu-second-style li:hover {
     }
 }
 
+@media screen and (max-width: 280px){
+    .ad.container{
+        width: 83%;
+    }
+}
+
 
 .site-footer{
     display: grid;
@@ -1200,29 +1235,30 @@ ul.header-nav li:hover, ul.menu-second-style li:hover {
 }
 
 .site-footer-top{
-    display: flex;
     max-width: 80%;
     position: relative;
+    justify-content: center;
+    justify-self: center;
 }
 
 .social{
     display: flex;
     position: relative;
     list-style: none;
-}
-
-#footer-social{
-    left: 9em;
+    padding-left: 0;
 }
 
 .social-icon{
     width: 4vw;
     height: 4vw;
+    min-width: 30px;
+    min-height: 30px;
 }
 
 #footer-logo{
     width: fit-content;
-    margin-left: -2em;
+    margin-left: 0;
+    max-width: 160px;
 }
 
 .footer-nav{
@@ -1249,7 +1285,7 @@ ul.header-nav li:hover, ul.menu-second-style li:hover {
     font-family: Bahnschrift, serif;
     color: gray;
     text-decoration: none;
-    font-size: 2.2vw;
+    font-size: 2vw;
 }
 
 .site-footer-main{
@@ -1275,7 +1311,7 @@ ul.header-nav li:hover, ul.menu-second-style li:hover {
     text-decoration: none;
     color: black;
     font-family: Bahnschrift, serif;
-    font-size: 2.7vw;
+    font-size: 2.4vw;
     position: relative;
 }
 
