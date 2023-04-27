@@ -23,6 +23,7 @@
     justify-content: space-between;
     height: 75%;
     padding: 1px;
+    width: 100%;
 }
 
 .menu-icon{
@@ -34,6 +35,7 @@
     align-items: center;
     max-width: 230px;
     margin-right: 2px;
+    z-index: 2;
 }
 
 /*dropdown menu*/
@@ -320,8 +322,7 @@ ul.header-nav li:hover, ul.menu-second-style li:hover {
 .logo{
     display: flex;
     position: relative;
-    left: 50%;
-    transform: translate(-50%, 0);
+    left: 44%;
     flex: 1;
     align-self: center;
     text-align: center;
@@ -349,7 +350,6 @@ ul.header-nav li:hover, ul.menu-second-style li:hover {
     flex: 1;
     align-items: center;
     max-width: 200px;
-    z-index: 1;
 }
 
 /*right element*/
