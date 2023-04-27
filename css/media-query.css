@@ -228,7 +228,7 @@
 
 @media screen and (max-width: 1080px){
     .main-content {
-        width: 90%;
+        width: 100%;
         float: none;
         position: relative;
         top: -46px;
