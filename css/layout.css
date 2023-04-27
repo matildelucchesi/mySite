@@ -18,7 +18,7 @@
     padding-left: 25px;
     padding-top: 2em;
     transform: translateY(90px);
-    width: 60%;
+    width: fit-content;
 }
 
 .first {
@@ -28,6 +28,8 @@
     grid-gap: 1em;
     padding-bottom: 12px;
     border-bottom: 1px solid gray;
+    justify-items: center;
+    width: fit-content;
 }
 
 .sidebar {
@@ -102,6 +104,7 @@
     display: flex;
     justify-content: space-around;
     border-bottom: 1px solid gray;
+    width: fit-content;
 }
 
 .layout-grid{
@@ -259,4 +262,8 @@
 .zero-news{
     border-right: 1px solid gray;
     margin-right: 10px;
+}
+
+.images{
+    width: fit-content;
 }

@@ -228,7 +228,6 @@
 
 @media screen and (max-width: 1080px){
     .main-content {
-        width: 100%;
         float: none;
         position: relative;
         top: -46px;
@@ -253,11 +252,12 @@
     }
 
     .headline{
-        font-size: 5vw;
+        font-size: 7vw;
+        max-width: 98%;
     }
 
     .news-text{
-        font-size: 2.5vw;
+        font-size: 4.5vw;
     }
 
     .site-footer-main{
@@ -322,6 +322,10 @@
     .site-footer-top{
         width: 65vw;
     }
+
+    .main-content{
+        left: -7px;
+    }
 }
 
 @media screen and (max-width: 650px){
@@ -380,11 +384,11 @@
 
 @media screen and (max-width: 440px){
     .headline{
-        font-size: 7vw;
+        max-width: 95%;
     }
 
     .news-text{
-        font-size: 4.5vw;
+        max-width: 95%;
     }
 
     .site-footer-top{
@@ -402,14 +406,29 @@
         width: 90%;
     }
 
+}
+
+@media screen and (max-width: 380px){
     .main-content{
-        left: -16px;
+        left: -14px;
     }
 }
 
 @media screen and (max-width: 370px){
     .layout-img{
         width: 80vw;
+    }
+
+    .headline{
+        max-width: 90%;
+    }
+
+    .main-content{
+        left: -20px;
+    }
+
+    .news-text{
+        max-width: 85%;
     }
 }
 
@@ -422,10 +441,6 @@
 
     .layout-img{
         width: 76vw;
-    }
-
-    .headline{
-        font-size: 6vw;
     }
 
     .news-text{
@@ -444,5 +459,33 @@
 @media screen and (max-width: 280px){
     .ad.container{
         width: 83%;
+    }
+
+    .headline{
+        max-width: 86%;
+    }
+
+    .news-text{
+        max-width: 70%;
+    }
+
+    .ad-container{
+        max-width: 80%;
+    }
+
+    .first{
+        width: 90%;
+    }
+
+    .second{
+        max-width: 90%;
+    }
+
+    .mini-title-box{
+        width: 40%;
+    }
+
+    .mini-title-text{
+        font-size: 4.7vw;
     }
 }
