@@ -401,6 +401,10 @@
     .ad-container{
         width: 90%;
     }
+
+    .main-content{
+        left: -16px;
+    }
 }
 
 @media screen and (max-width: 370px){
