@@ -349,6 +349,7 @@ ul.header-nav li:hover, ul.menu-second-style li:hover {
     flex: 1;
     align-items: center;
     max-width: 200px;
+    z-index: 1;
 }
 
 /*right element*/
