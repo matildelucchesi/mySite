@@ -230,6 +230,8 @@
     .main-content {
         width: 90%;
         float: none;
+        position: relative;
+        top: -46px;
     }
 
     .sidebar {
