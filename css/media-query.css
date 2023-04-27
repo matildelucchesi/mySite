@@ -329,14 +329,6 @@
     }
 }
 
-@media screen and (max-width: 650px){
-
-    .site-footer{
-        width: 91vw;
-    }
-
-}
-
 @media screen and (min-width: 629px){
     #footer-logo{
         transform: translate(-100%);
@@ -344,11 +336,6 @@
 }
 
 @media screen and (max-width: 630px){
-
-    .site-footer{
-        width: 88vw;
-    }
-
     #footer-logo{
         transform: translate(-60%);
         left: 0;
@@ -394,10 +381,6 @@
 
     .site-footer-top{
         width: 44vw;
-    }
-
-    #footer-social{
-        left: 34px;
     }
 }
 
@@ -488,5 +471,17 @@
 
     .mini-title-text{
         font-size: 4.7vw;
+    }
+}
+
+@media screen and (min-width: 210px){
+    body{
+        overflow-x: hidden;
+    }
+}
+
+@media screen and (max-width: 210px){
+    body{
+        overflow-x: visible;
     }
 }

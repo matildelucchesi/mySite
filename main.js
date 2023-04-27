@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
     displayDate();
     displayInnerSearch();
     overlayDimension();
+
 });
 
 document.addEventListener('click', e => {
@@ -29,10 +30,12 @@ document.addEventListener('click', e => {
         if (currentDropdown.classList.contains('active')) {
             d.style.overflowY = 'auto';
             overlay.style.display = 'block';
+            document.body.style.overflowY = 'hidden';
 
         } else {
             overlay.style.display = 'none';
             d.style.overflowY = 'hidden';
+            document.body.style.overflowY = 'visible';
         }
     }
 
@@ -170,5 +173,11 @@ function displayInnerSearch(){
 
 function overlayDimension(){
     const overlay = document.querySelector(".overlay");
-    overlay.style.height = document.body.scrollHeight + 100 + "px";
+    const container =  document.querySelector(".container");
+    const header =  document.querySelector(".header");
+
+    const containerHeight = container.getBoundingClientRect().height;
+    const headerHeight = header.getBoundingClientRect().height;
+
+    overlay.style.height = containerHeight + headerHeight + "px";
 }
