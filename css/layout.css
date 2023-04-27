@@ -248,3 +248,8 @@
 .item .second-text {
     max-width: 100%;
 }
+
+.first-news{
+    border-bottom: 1px solid gray;
+    margin-bottom: 10px;
+}
